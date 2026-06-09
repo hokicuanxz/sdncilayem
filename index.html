@@ -3,479 +3,744 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SD NEGERI CILAYEM - Sekolah Dasar di Indonesia</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>SD NEGERI CILAYEM - Sekolah Dasar Unggulan di Bandung Barat</title>
+  <meta name="description" content="Website resmi SD Negeri Cilayem - Sekolah dasar negeri berkualitas di Bandung Barat dengan akreditasi B dan 8 guru profesional." />
+  <meta name="keywords" content="SDN Cilayem, sekolah dasar, SD negeri, Bandung Barat, pendidikan dasar" />
+  <meta name="author" content="SDN Cilayem" />
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="SD NEGERI CILAYEM" />
+  <meta property="og:description" content="Sekolah Dasar Negeri Unggulan di Bandung Barat" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sdncilayem.github.io" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/mrplanktn/sdncilayem/main/images/banner.webp" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
-    /* Reset & Base */
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-dark: #1e40af;
+      --secondary: #f59e0b;
+      --accent: #10b981;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --text-dark: #1e293b;
+      --text-gray: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      --radius: 12px;
+      --transition: all 0.3s ease;
+    }
+
+    /* ===== RESET & BASE ===== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f9fafb;
-      color: #1f2937;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: var(--text-dark);
       min-height: 100vh;
       line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 16px;
     }
+
     a {
-      color: #2563eb;
+      color: var(--primary-light);
       text-decoration: none;
+      transition: var(--transition);
     }
-    a:hover,
-    a:focus {
+
+    a:hover {
+      color: var(--primary);
       text-decoration: underline;
-      outline: none;
     }
-    .container {
-      max-width: 1000px;
-      width: 100%;
-      margin: 24px auto;
-      padding: 0 16px;
-    }
+
+    /* ===== HEADER ===== */
     header {
-      width: 100%;
-      background-color: #1e3a8a;
-      color: white;
-      border-radius: 12px;
-      padding: 24px 16px;
-      box-shadow: 0 4px 8px rgba(30, 58, 138, 0.3);
-      display: flex;
-      align-items: center;
-      gap: 16px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      box-shadow: var(--shadow-lg);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
     }
-    .header-inner {
-      max-width: 1000px;
+
+    .header-container {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 16px;
+      padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 2rem;
     }
-    .logo {
-      width: 64px;
-      height: 64px;
-      border-radius: 12px;
-      object-fit: cover;
-      border: 2px solid white;
-      flex-shrink: 0;
-    }
-    .school-name {
-      font-size: 2rem;
-      font-weight: 700;
-      white-space: nowrap;
-      user-select: none;
-      color: white;
-      margin-left: 12px;
-      flex-shrink: 0;
-    }
-    /* Navigation */
-    nav.main-nav {
+
+    .logo-section {
       display: flex;
       align-items: center;
-      gap: 24px;
-      user-select: none;
+      gap: 1rem;
     }
-    nav.main-nav a {
-      font-weight: 600;
-      font-size: 1.1rem;
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .logo:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .school-name {
+      font-size: 1.8rem;
+      font-weight: 700;
       color: white;
-      transition: color 0.3s ease;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
-    nav.main-nav a:hover,
-    nav.main-nav a:focus {
-      color: #93c5fd;
-      outline: none;
-      text-decoration: underline;
+
+    .school-name span {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 400;
+      opacity: 0.9;
     }
-    /* Kebab Menu Button for nav on small screens */
-    .nav-kebab-button {
+
+    /* Navigation */
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      color: white;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .nav-menu a:hover::after {
+      width: 80%;
+    }
+
+    .nav-menu a:hover {
+      background: rgba(255,255,255,0.1);
+      text-decoration: none;
+      color: var(--secondary);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
       background: transparent;
       border: none;
-      cursor: pointer;
-      padding: 8px;
-      border-radius: 50%;
       color: white;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.2s ease;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 8px;
+      transition: var(--transition);
     }
-    .nav-kebab-button:hover,
-    .nav-kebab-button:focus {
-      background-color: rgba(255 255 255 / 0.2);
-      outline: none;
+
+    .mobile-menu-btn:hover {
+      background: rgba(255,255,255,0.1);
     }
-    .nav-kebab-button svg {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-    }
-    /* Responsive menu (mobile) */
-    @media (max-width: 768px) {
-      nav.main-nav {
-        position: absolute;
-        top: 75px;
-        right: 16px;
-        background: #1e3a8a;
-        border-radius: 12px;
-        box-shadow: 0 12px 24px rgba(30, 58, 138, 0.6);
-        flex-direction: column;
-        padding: 12px 24px;
-        gap: 16px;
-        display: none;
-        user-select: none;
-        z-index: 300;
-      }
-      nav.main-nav.show {
-        display: flex;
-      }
-      .nav-kebab-button {
-        display: flex;
-      }
-      header .header-inner {
-        justify-content: space-between;
-      }
-      .school-name {
-        flex-grow: 1;
-        margin-left: 8px;
-        white-space: normal;
-        font-size: 1.6rem;
-      }
-    }
-    main {
-      width: 100%;
-      flex: 1;
-    }
-    /* Hero Section */
+
+    /* ===== HERO SECTION ===== */
     .hero {
-      margin: 32px 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
+      background: var(--bg-white);
+      max-width: 1200px;
+      margin: 2rem auto;
+      border-radius: var(--radius);
+      padding: 3rem;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
       align-items: center;
-      justify-content: center;
-      background: white;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 6px 16px rgba(31, 41, 55, 0.1);
+      animation: fadeInUp 0.8s ease;
     }
-    .hero-text {
-      flex: 1 1 320px;
-      min-width: 300px;
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .hero-text h1 {
-      font-size: 2.8rem;
-      color: #1e3a8a;
-      margin-bottom: 16px;
+
+    .hero-content h1 {
+      font-size: 3rem;
       font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      line-height: 1.2;
     }
-    .hero-text p {
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-      color: #374151;
+
+    .hero-content .tagline {
+      font-size: 1.2rem;
+      color: var(--text-gray);
+      margin-bottom: 1.5rem;
     }
+
+    .hero-content p {
+      font-size: 1rem;
+      color: var(--text-gray);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-content p i {
+      color: var(--secondary);
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.875rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+      text-decoration: none;
+    }
+
     .hero-image {
-      flex: 1 1 320px;
-      min-width: 300px;
       text-align: center;
     }
+
     .hero-image img {
       max-width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(30, 58, 138, 0.15);
-      height: auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
     }
-    /* Sections */
-    section {
-      margin-bottom: 60px;
+
+    .hero-image img:hover {
+      transform: scale(1.02);
     }
-    h2.section-title {
-      font-size: 2rem;
+
+    /* ===== SECTIONS ===== */
+    .section {
+      background: var(--bg-white);
+      max-width: 1200px;
+      margin: 2rem auto;
+      border-radius: var(--radius);
+      padding: 3rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
       font-weight: 700;
-      color: #1e3a8a;
-      margin-bottom: 24px;
-      border-bottom: 4px solid #2563eb;
-      padding-bottom: 8px;
-      max-width: 240px;
-    }
-    /* School Data */
-    .school-data {
-      background: white;
-      box-shadow: 0 6px 16px rgba(31, 41, 55, 0.1);
-      border-radius: 16px;
-      padding: 24px;
-      color: #374151;
-      line-height: 1.5;
-    }
-    .school-data p {
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-    }
-    /* Teachers */
-    .teachers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-      gap: 32px;
-    }
-    .teacher-card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(31, 41, 55, 0.08);
-      padding: 20px;
+      color: var(--primary);
+      margin-bottom: 2rem;
       display: flex;
-      flex-direction: column;
       align-items: center;
+      gap: 1rem;
+    }
+
+    .section-title i {
+      color: var(--secondary);
+    }
+
+    /* ===== STATS CARDS ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 2rem;
+border-radius: var(--radius);
       text-align: center;
-      transition: box-shadow 0.3s ease;
-      user-select: none;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
     }
-    .teacher-card:focus-within,
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stat-card .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+
+    .stat-card .number {
+      font-size: 3rem;
+      font-weight: 800;
+      display: block;
+    }
+
+    .stat-card .label {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* ===== TEACHERS GRID ===== */
+    .teachers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .teacher-card {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+
     .teacher-card:hover {
-      box-shadow: 0 12px 24px rgba(31, 41, 55, 0.15);
-      outline: none;
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--secondary);
     }
+
     .teacher-photo {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 16px;
-      border: 3px solid #2563eb;
+      margin-bottom: 1.5rem;
+      border: 4px solid var(--primary);
+      box-shadow: var(--shadow);
     }
+
     .teacher-name {
+      font-size: 1.25rem;
       font-weight: 700;
-      font-size: 1.2rem;
-      color: #1e3a8a;
-      margin-bottom: 4px;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
     }
+
     .teacher-subject {
-      font-size: 1rem;
-      color: #4b5563;
+      color: var(--text-gray);
+      font-size: 0.95rem;
     }
-    /* Students Info */
-    .students-info {
-      background: white;
-      box-shadow: 0 6px 16px rgba(31, 41, 55, 0.1);
-      border-radius: 16px;
-      padding: 24px;
-      text-align: center;
-      color: #374151;
-    }
-    .students-info p {
-      margin-bottom: 8px;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-    /* Footer */
+
+    /* ===== FOOTER ===== */
     footer {
-      width: 100%;
-      text-align: center;
-      padding: 24px 16px;
-      font-size: 0.9rem;
-      color: #6b7280;
-      user-select: none;
-      border-top: 1px solid #e5e7eb;
-      margin-top: auto;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
     }
-    /* Responsive */
-    @media (max-width: 640px) {
-      header {
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+
+    .footer-section p {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-section i {
+      color: var(--secondary);
+      width: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.25rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-wrap: wrap;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        width: 100%;
         flex-direction: column;
-        text-align: center;
-        gap: 12px;
-        padding: 16px 8px;
+        gap: 1rem;
+        padding-top: 1rem;
       }
-      .school-name {
-        font-size: 1.8rem;
+
+      .nav-menu.active {
+        display: flex;
       }
+
       .hero {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .section {
+        padding: 2rem 1.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .cta-buttons {
         flex-direction: column;
       }
-      .hero-text, .hero-image {
-        min-width: auto;
-        flex: unset;
+
+      .stats-grid {
+        grid-template-columns: 1fr;
       }
-      .students-info p {
-        font-size: 1.1rem;
-      }
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+transform: translateY(0);
     }
   </style>
 </head>
 <body>
-  <header role="banner">
-    <div class="header-inner">
-      <div style="display:flex; align-items:center; gap: 12px; flex-shrink: 0;">
-    <img 
-      src="images/logo.png"
-      alt="Logo Sekolah Dasar Negeri Cilayem, berwarna biru dan putih dengan tulisan SD di tengah" 
-      class="logo"
-      onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/91aa1c6a-bf92-4c7c-b478-3012018ebf64.png';"
-    />
-    <div class="school-name">SD NEGERI CILAYEM</div>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo-section">
+        <img src="images/logo.png" alt="Logo SDN Cilayem" class="logo" 
+             onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=SD+Cilayem&background=1e3a8a&color=fff&size=128';">
+        <div class="school-name">
+          SD NEGERI CILAYEM
+          <span>Kabupaten Bandung Barat</span>
+        </div>
       </div>
-      <nav class="main-nav" role="navigation" aria-label="Menu utama">
-        <a href="#hero-title">Beranda</a>
-        <a href="#school-info-title">Data Sekolah</a>
-        <a href="#teachers-title">Data Guru</a>
-        <a href="#students-title">Data Siswa</a>
-      </nav>
-      <button class="nav-kebab-button" aria-label="Tampilkan menu" aria-controls="main-nav" aria-expanded="false" aria-haspopup="true">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <circle cx="12" cy="5" r="2"></circle>
-          <circle cx="12" cy="12" r="2"></circle>
-          <circle cx="12" cy="19" r="2"></circle>
-        </svg>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
       </button>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home"><i class="fas fa-home"></i> Beranda</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> Tentang</a>
+        <a href="#teachers"><i class="fas fa-chalkboard-teacher"></i> Guru</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Kontak</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container" role="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-text">
-        <h2 id="hero-tittle">Selamat Datang di SDN CILAYEM</h2>
-        <p>Alamat: Kp. Cilayem RT. 05 RW. 11 Desa Ciptagumati,
-           Kec. Cikalongwetan, Kab. Bandung Barat 40556</p>
-        <p>SDN Cilayem adalah sekolah dasar yang berkomitmen memberikan pendidikan berkualitas untuk generasi muda bangsa.</p>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Selamat Datang di<br>SDN Cilayem</h1>
+      <p class="tagline">Mewujudkan Generasi Cerdas & Berkarakter</p>
+      <p><i class="fas fa-map-marker-alt"></i> Kp. Cilayem, Desa Ciptagumati, Bandung Barat</p>
+      <p><i class="fas fa-award"></i> Akreditasi: B</p>
+      <p><i class="fas fa-users"></i> 100+ Siswa Aktif</p>
+      <div class="cta-buttons">
+        <a href="#about" class="btn btn-primary">
+          <i class="fas fa-info-circle"></i> Selengkapnya
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fas fa-envelope"></i> Hubungi Kami
+        </a>
       </div>
-      <div class="hero-image">
-        <img 
-          src="images/banner.webp" 
-          alt="Gambar Gedung Sekolah Dasar Nusantara modern dengan taman hijau di halaman depan dan atap berwarna merah" 
-          onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bf53a957-9b6e-472c-a339-bcfa5a8c0349.png';"
-        />
+    </div>
+    <div class="hero-image">
+      <img src="images/banner.webp" alt="Gedung SDN Cilayem" 
+           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop';">
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section fade-in" id="about">
+    <h2 class="section-title"><i class="fas fa-chart-bar"></i> Profil Sekolah</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="icon"><i class="fas fa-user-graduate"></i></div>
+        <span class="number">100+</span>
+        <span class="label">Siswa</span>
       </div>
-    </section>
-
-    <section aria-labelledby="school-info-title" class="school-data">
-      <h2 id="school-info-title" class="section-title">Data Sekolah</h2>
-      <p><strong>Nama Sekolah:</strong> SD NEGERI CILAYEM</p>
-      <p><strong>Alamat:</strong> Kp. Cilayem RT. 05 RW. 11 Desa Ciptagumati,
-           Kec. Cikalongwetan, Kab. Bandung Barat 40556</p>
-      <p><strong>Status Sekolah:</strong> Negeri</p>
-      <p><strong>Akreditasi:</strong> B</p>
-      <p><strong>Jumlah Ruang Kelas:</strong> 6</p>
-      <p><strong>Kepala Sekolah:</strong> Didi Mulyadi</p>
-    </section>
-
-    <section aria-labelledby="teachers-title">
-      <h2 id="teachers-title" class="section-title">Data Guru</h2>
-      <p><strong>Jumlah Guru:</strong> 8</p>
-      <div class="teachers">
-        <article tabindex="0" class="teacher-card" aria-describedby="desc-guru-1">
-          <img 
-            src="images/chaerul.png" 
-            alt="Foto guru Pak Adi, guru matematika dengan senyum ramah dan pakaian rapi" 
-            class="teacher-photo"
-            onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1b16eb15-7b39-49ae-8547-617c026e7be0.png';"
-          />
-          <h3 class="teacher-name">Pak Chaerul Saleh </h3>
-          <p id="desc-guru-1" class="teacher-subject">Guru Kelas</p>
-        </article>
-
-        <article tabindex="0" class="teacher-card" aria-describedby="desc-guru-2">
-          <img 
-            src="images/wulan.png"
-            alt="Foto guru Bu Rina, guru bahasa Indonesia mengenakan kacamata dan tersenyum" 
-            class="teacher-photo"
-            onerror="this.onerror=null;this.src='https://placehold.co/120x120?text=Guru';"
-          />
-          <h3 class="teacher-name">Bu Wulan</h3>
-          <p id="desc-guru-2" class="teacher-subject">Guru Kelas</p>
-        </article>
-
-        <article tabindex="0" class="teacher-card" aria-describedby="desc-guru-3">
-          <img 
-            src="images/Nurhasanah.png" 
-            alt="Foto guru Pak Joko, guru IPA dengan pakaian formal dan wajah ceria" 
-            class="teacher-photo"
-            onerror="this.onerror=null;this.src='https://placehold.co/120x120?text=Guru';"
-          />
-          <h3 class="teacher-name">Bu Nurhasanah</h3>
-          <p id="desc-guru-3" class="teacher-subject">Guru Kelas</p>
-        </article>
-
-        <article tabindex="0" class="teacher-card" aria-describedby="desc-guru-3">
-          <img 
-            src="images/wiwin.png" 
-            alt="Foto guru Pak Joko, guru IPA dengan pakaian formal dan wajah ceria" 
-            class="teacher-photo"
-            onerror="this.onerror=null;this.src='https://placehold.co/120x120?text=Guru';"
-          />
-          <h3 class="teacher-name">Bu Wiwin</h3>
-          <p id="desc-guru-3" class="teacher-subject">Guru kelas</p>
-        </article> 
-
-        <article tabindex="0" class="teacher-card" aria-describedby="desc-guru-3">
-          <img 
-            src="images/enok.png" 
-            alt="Foto guru Pak Joko, guru IPA dengan pakaian formal dan wajah ceria" 
-            class="teacher-photo"
-            onerror="this.onerror=null;this.src='https://placehold.co/120x120?text=Guru';"
-          />
-          <h3 class="teacher-name">Bu Enok</h3>
-          <p id="desc-guru-3" class="teacher-subject">Guru IPA</p>
-        </article>
-
-        <article tabindex="0" class="teacher-card" aria-describedby="desc-guru-3">
-          <img 
-            src="images/ira.png" 
-            alt="Foto guru Pak Joko, guru IPA dengan pakaian formal dan wajah ceria" 
-            class="teacher-photo"
-            onerror="this.onerror=null;this.src='https://placehold.co/120x120?text=Guru';"
-          />
-          <h3 class="teacher-name">Bu Ira</h3>
-          <p id="desc-guru-3" class="teacher-subject">Guru IPA</p>
-        </article>
-
-        <article tabindex="0" class="teacher-card" aria-describedby="desc-guru-3">
-          <img 
-            src="images/Nurhasanah.png" 
-            alt="Foto guru Pak Joko, guru IPA dengan pakaian formal dan wajah ceria" 
-            class="teacher-photo"
-            onerror="this.onerror=null;this.src='https://placehold.co/120x120?text=Guru';"
-          />
-          <h3 class="teacher-name">Bu Nurhasanah</h3>
-          <p id="desc-guru-3" class="teacher-subject">Guru IPA</p>
-        </article>
-
-        <article tabindex="0" class="teacher-card" aria-describedby="desc-guru-3">
-          <img 
-            src="images/Nurhasanah.png" 
-            alt="Foto guru Pak Joko, guru IPA dengan pakaian formal dan wajah ceria" 
-            class="teacher-photo"
-            onerror="this.onerror=null;this.src='https://placehold.co/120x120?text=Guru';"
-          />
-          <h3 class="teacher-name">Bu Nurhasanah</h3>
-          <p id="desc-guru-3" class="teacher-subject">Guru IPA</p>
-        </article>
-
-
-
-        <!-- More teacher cards can be added here similarly -->
+      <div class="stat-card">
+        <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <span class="number">8</span>
+        <span class="label">Guru</span>
       </div>
-    </section>
+      <div class="stat-card">
+        <div class="icon"><i class="fas fa-door-open"></i></div>
+        <span class="number">6</span>
+        <span class="label">Ruang Kelas</span>
+      </div>
+      <div class="stat-card">
+        <div class="icon"><i class="fas fa-certificate"></i></div>
+        <span class="number">B</span>
+        <span class="label">Akreditasi</span>
+      </div>
+    </div>
+    <div style="margin-top: 2rem;">
+      <h3 style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-bullseye"></i> Visi</h3>
+      <p style="font-size: 1.1rem; color: var(--text-gray); margin-bottom: 1.5rem; font-style: italic;">
+        "Menjadi sekolah dasar unggulan yang menghasilkan siswa berakhlak mulia, cerdas, dan berkarakter Pancasila."
+      </p>
+      <h3 style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-tasks"></i> Misi</h3>
+      <ul style="color: var(--text-gray); margin-left: 1.5rem;">
+        <li>Menyelenggarakan pendidikan berkualitas dengan kurikulum modern</li>
+        <li>Mengembangkan potensi siswa secara optimal</li>
+        <li>Menumbuhkan karakter berlandaskan nilai-nilai Pancasila</li>
+        <li>Menciptakan lingkungan belajar yang nyaman dan inklusif</li>
+      </ul>
+    </div>
+  </section>
 
-    <section aria-labelledby="students-title" class="students-info">
-      <h2 id="students-title" class="section-title">Data Siswa</h2>
-      <p><strong>Jumlah Siswa:</strong> 100</p>
-      <p>Siswa aktif yang belajar dengan penuh semangat dalam lingkungan yang mendukung pengembangan karakter dan intelektual.</p>
-    </section>
-  </main>
+  <!-- Teachers Section -->
+  <section class="section fade-in" id="teachers">
+    <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> Data Guru</h2>
+<div class="teachers-grid">
+      <div class="teacher-card">
+        <img src="images/chaerul.png" alt="Pak Chaerul Saleh" class="teacher-photo"
+             onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Chaerul+Saleh&background=1e3a8a&color=fff&size=128';">
+        <h3 class="teacher-name">Pak Chaerul Saleh</h3>
+        <p class="teacher-subject"><i class="fas fa-book"></i> Guru Kelas</p>
+      </div>
+      <div class="teacher-card">
+        <img src="images/wulan.png" alt="Bu Wulan" class="teacher-photo"
+             onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Wulan&background=1e3a8a&color=fff&size=128';">
+        <h3 class="teacher-name">Bu Wulan</h3>
+        <p class="teacher-subject"><i class="fas fa-book"></i> Guru Kelas</p>
+      </div>
+      <div class="teacher-card">
+        <img src="images/Nurhasanah.png" alt="Bu Nurhasanah" class="teacher-photo"
+             onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Nurhasanah&background=1e3a8a&color=fff&size=128';">
+        <h3 class="teacher-name">Bu Nurhasanah</h3>
+        <p class="teacher-subject"><i class="fas fa-book"></i> Guru Kelas</p>
+      </div>
+      <div class="teacher-card">
+        <img src="images/wiwin.png" alt="Bu Wiwin" class="teacher-photo"
+             onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Wiwin&background=1e3a8a&color=fff&size=128';">
+        <h3 class="teacher-name">Bu Wiwin</h3>
+        <p class="teacher-subject"><i class="fas fa-book"></i> Guru Kelas</p>
+      </div>
+      <div class="teacher-card">
+        <img src="images/enok.png" alt="Bu Enok" class="teacher-photo"
+             onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Enok&background=1e3a8a&color=fff&size=128';">
+        <h3 class="teacher-name">Bu Enok</h3>
+        <p class="teacher-subject"><i class="fas fa-flask"></i> Guru IPA</p>
+      </div>
+      <div class="teacher-card">
+        <img src="images/ira.png" alt="Bu Ira" class="teacher-photo"
+             onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ira&background=1e3a8a&color=fff&size=128';">
+        <h3 class="teacher-name">Bu Ira</h3>
+        <p class="teacher-subject"><i class="fas fa-flask"></i> Guru IPA</p>
+      </div>
+    </div>
+  </section>
 
-  <footer role="contentinfo">
-    <p>SD Negeri Cilayem &copy; 2024 - Kp. Cilayem RT. 05 RW. 11 Desa Ciptagumati,
-           Kec. Cikalongwetan, Kab. Bandung Barat 40556</p>
-    <p>Email: info@sdncilayem.sch.id | Telp: (021) 123-4567</p>
-  </footer>
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>SDN Cilayem</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Kp. Cilayem RT. 05 RW. 11</p>
+        <p>Desa Ciptagumati, Kec. Cikalongwetan</p>
+        <p>Kab. Bandung Barat 40556</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="mailto:info@sdncilayem.sch.id" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Kontak</h3>
+        <p><i class="fas fa-phone"></i> (021) 123-4567</p>
+        <p><i class="fas fa-envelope"></i> info@sdncilayem.sch.id</p>
+        <p><i class="fas fa-clock"></i> Senin - Jumat: 07:00 - 14:00</p>
+      </div>
+      <div class="footer-section">
+        <h3>Link Cepat</h3>
+        <p><a href="#home" style="color: white;"><i class="fas fa-chevron-right"></i> Beranda</a></p>
+        <p><a href="#about" style="color: white;"><i class="fas fa-chevron-right"></i> Tentang</a></p>
+        <p><a href="#teachers" style="color: white;"><i class="fas fa-chevron-right"></i> Guru</a></p>
+        <p><a href="https://github.com/mrplanktn/sdncilayem" style="color: white;"><i class="fab fa-github"></i> GitHub</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SD Negeri Cilayem. All rights reserved.</p>
+      <p>Developed with ❤️ by mrplanktn</p>
+    </div>
+</footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('active');
+    }
+
+    // Scroll animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          // Close mobile menu if open
+          document.getElementById('navMenu').classList.remove('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
