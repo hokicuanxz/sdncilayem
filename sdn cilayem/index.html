@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Alert</title>
+<style>
+  body {
+    margin: 0;
+    background: black;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  canvas {
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+  }
+ .glitch {
+    font-size: 3em;
+    text-align: center;
+    position: relative;
+    animation: glitch 2s infinite;
+  }
+ .glitch::before,.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+ .glitch::before {
+    animation: glitchTop 2s infinite;
+    color: #ff00c1;
+    z-index: -1;
+  }
+ .glitch::after {
+    animation: glitchBottom 2s infinite;
+    color: #00fff9;
+    z-index: -2;
+  }
+  @keyframes glitch {
+    2%,64% { transform: translate(2px,0) skew(0deg); }
+    4%,60% { transform: translate(-2px,0) skew(0deg); }
+  }
+  @keyframes glitchTop {
+    2%,64% { transform: translate(2px,-2px); }
+    4%,60% { transform: translate(-2px,2px); }
+  }
+  @keyframes glitchBottom {
+    2%,64% { transform: translate(-2px,0); }
+    4%,60% { transform: translate(2px,0); }
+  }
+ .sub {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+<canvas id="matrix"></canvas>
+<div>
+  <div class="glitch" data-text="404 - JUST KIDDING">404 - JUST KIDDING</div>
+  <div class="sub">System Breach: 99% Complete...<br>Eh bercanda wkwk 😎</div>
+</div>
 
+<script>
+  // Efek hujan matrix
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const letters = "01";
+  const fontSize = 14;
+  const columns = canvas.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#0F0';
+    ctx.font = fontSize + 'px monospace';
+
+    for(let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+      drops[i]++;
+    }
+  }
+  setInterval(draw, 33);
+</script>
+</body>
+</html>
